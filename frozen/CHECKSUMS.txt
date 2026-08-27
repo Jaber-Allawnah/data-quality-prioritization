@@ -1,0 +1,44 @@
+SHA-256 manifest - frozen analysis version
+generated 2026-08-14 09:59:50
+40 files
+
+FROZEN.md                                       58449fc1bb44cc1446db69e22fa786a54820ced9209b74d3ffbb29c1ca78d9cc     13,421
+METHODOLOGY.md                                  c943bf9532e9322279ec28ed6e30375a37148a91f90f928b3deb1e128e205eb3     17,258
+RESEARCH_LOG.md                                 347a01168a73f6ad6758810892849730d455c601f2c6e54e04e4adc6efa71660     20,943
+RESULTS_SUMMARY.md                              81c1ef2178866bb907a81603f11e8322ded9383cf6c879bd67b8e8fb0f350b54     24,044
+RECOMMENDATIONS.md                              aadb34a3c5d294b51af8a83190b3415b812a3567805e710701d38e533a3ce87d      7,853
+verify_documents.py                             d5a09fc2975dd9712dae8f02dd09e69e094812724ef5bdadbbba50ab0bfba3dd     24,166
+make_excel_summary.py                           4f06887530d2b51807ba4c829ce756513817b16037cc4e013a7390520ff6937b     34,889
+run_experiments.py                              ea527ad0f7b11e8c5505b9572ef19d37b69102d0beaef04ce5566c714d41db38      4,829
+build_roi_model.py                              47311240bdb180a6b9bd9300d2fb82f943b2a8506de1a397e5288e2cc066ce28     15,518
+analyse_results.py                              332b3b242a130201de835eb043ba1a558f714b0f1b51f92ad369a4e1b49ef5d7     11,712
+measure_cleaning_cost.py                        e1cef2ed868bb48d0f5322dbdbc6cecccc7b8286cd21a9c769eb76d262452a09      4,418
+audit_injectors.py                              a1d3a6787de8584ae832c6babd3c301df07fe19edb0d3572756c4edb99639610      9,912
+audit_pipeline_overlap.py                       1ec36af46520df5aafddba240bee3c3c9522890e3dd25683f427be14ee852023      7,005
+audit_cost_stability.py                         95ffb589df1f2217374b66c094559705f56de6501263d3899b64f1afb639e942      7,672
+preflight.py                                    acfe88b64ebd8da0c2de0106de37137aeae1b79fb91d667db3fa84a821b8ff76      7,164
+src/data_cleaner.py                             59a2ae66a406ea625d248d30248f6cc526bd821169e71e9f13e0f3aa03389ef9     27,107
+src/data_loader.py                              35a64f40d310b90f24ae98f4a5bcedbeebaabeba3beabbb920b95325ecfab401     10,830
+src/degradation_tester.py                       cab102ccaad2df881bb4ed3ed60f8efb558be00229c8415ab97f941b8e5f78d9      4,453
+src/error_injector.py                           71167ff7a7818f6b820f8c758410bca28d10ac5eaf956739eb464e4776427c38     66,230
+src/models.py                                   a503fe601d114e8b698ea63faa02c925713d15bfedd37b0b9b262384014584e1      3,386
+src/preprocessing.py                            58f9f9a0bbbece68e72f3486d93fd54c1d300faf653cc94b9d0ebaf5b2492e5e      5,201
+results/analysis_base.csv                       e4cd081cfd0c3e77f2cc4b7b8547949bdba30d14a1729555c3f03c14eaebb4c7    500,222
+results/baseline_results.csv                    607ceb15b0625e2d2a78fb80516db6adaad9a369bea2b29851410e2f8747dcba      7,248
+results/cleaning_costs.csv                      0a55513af63ccfd9343694a6a61a30fa5bb8578969c4b0b3ee814712f7e08352     46,196
+results/experiment_results.csv                  8567a33f862780be40730932e7d563c874158228d61236891022d506002b0afe  2,469,474
+results/experiment_results_PRE_IQR_ARCHIVE.csv  f5d1c3189ba7c30ed30fbd3188e1da87a12e1bccb3e772991e9f4b7c0ab293bf  2,479,910
+results/injector_audit.csv                      fe90f789a9e0d5c3b88b4c0756a53af6a1c2a373b99d33a6078967f0e426dde2     36,346
+results/mechanism_comparison.csv                a971c0964402682c664c399ed81388e00c058f26b66fb54647526f2b0aa2cad8      1,152
+results/pipeline_overlap_audit.csv              f551162740b9ba7071283bcc5fe46f70148650281eb368998d0339fbfae175e5      4,971
+results/rq1_cleaning_actions.csv                d1bc595e71ec00f3f5723110eca3a29e9fa1c3f66a52b1fbb01e044b285ddb6d      3,044
+results/rq2_automated_efficiency.csv            725a7d69d0b607da5e497a76940c49c3a7640ce8b44e1e72c48ef6be66c2975d      3,705
+results/rq2_breakeven.csv                       5f7fadcd51dd41a87d9d02e7bf98d2df9a2a1ce59bff74f05623a14629a0b689      1,055
+results/rq3_model_dependency.csv                f6d5389dc1d764312e0ada2b96ce02e3a7800ebb6ebddb7faaaa9d198a3ec2ff      1,341
+results/rq4_dataset_dependency.csv              e9572f3735c741151cf9455ecd7392361533de2f8672314a52bee772906c1766      1,335
+frozen/make_manifest.py                         9c9e332de48cbff1b6cbc362332b6ba1af498dc3bdeca2dccd74edc816175131      1,808
+frozen/analysis_output.txt                      873995177ab183bcb54cbf878d17baeaea1f50e36dfa3207c82050cb6283bb78     15,056
+frozen/audit_cost_stability_output.txt          32eeb7efe29fec401cdd3adffda3a3006413e5b0b18c101081f3182f257b1035      4,943
+frozen/rq2_model_output.txt                     31d63ba906484538ba6022e2ef561bea55ff38d50f14685fe7796e26b5ace4cd     11,465
+frozen/cleaning_costs_CONTAMINATED_1848.csv     deab43e5101e414c5c232f1f66e2e489d3800a6b11db43260fa0904043df2442     46,113
+frozen/cleaning_costs_PREVIOUS_RUN.csv          ae10c7e3eb27a159f666c87b24765a512475f7aae0ac92ee5b06b2d5e192db06     45,956

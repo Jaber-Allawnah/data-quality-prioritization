@@ -1,0 +1,301 @@
+Dataset,Error_Type,Severity,Route,Method,Clean_Seconds,Rows_Before,Rows_After,Row_Change_Pct,Train_Seconds_After_Clean,Total_Compute_Seconds
+Breast Cancer,categorical_errors,low,automated_cleaning,validate against vocabulary,0.0007401999901048839,455,455,0.0,0.3259944915771482,0.3267346915672531
+Breast Cancer,categorical_errors,medium,automated_cleaning,validate against vocabulary,0.0006914999976288527,455,455,0.0,0.3052587509155269,0.30595025091315575
+Breast Cancer,categorical_errors,high,automated_cleaning,validate against vocabulary,0.0006916999991517514,455,455,0.0,0.3223757743835445,0.32306747438269623
+Breast Cancer,class_imbalance,low,automated_cleaning,oversample minority,0.0005231999966781586,438,570,30.136986301369863,0.345694303512573,0.3462175035092512
+Breast Cancer,class_imbalance,medium,automated_cleaning,oversample minority,0.0004962999955751002,413,570,38.01452784503632,0.37480044364929155,0.37529674364486665
+Breast Cancer,class_imbalance,high,automated_cleaning,oversample minority,0.00047950001317076385,387,570,47.286821705426355,0.3496677875518795,0.35014728756505026
+Breast Cancer,contextual_errors,low,automated_cleaning,IQR clipping,0.029299299989361316,455,455,0.0,0.3269553184509274,0.3562546184402887
+Breast Cancer,contextual_errors,medium,automated_cleaning,IQR clipping,0.027282700000796467,455,455,0.0,0.3184537887573238,0.34573648875812024
+Breast Cancer,contextual_errors,high,automated_cleaning,IQR clipping,0.02753849999862723,455,455,0.0,0.317005634307861,0.3445441343064882
+Breast Cancer,data_heterogeneity,low,automated_cleaning,re-standardise features,0.007374599983450025,455,455,0.0,0.3495917320251461,0.3569663320085961
+Breast Cancer,data_heterogeneity,medium,automated_cleaning,re-standardise features,0.006951200019102544,455,455,0.0,0.3509140014648434,0.35786520148394596
+Breast Cancer,data_heterogeneity,high,automated_cleaning,re-standardise features,0.007304800004931167,455,455,0.0,0.3613190650939938,0.368623865098925
+Breast Cancer,data_inconsistency,low,automated_cleaning,consistency rules,0.02879509999183938,455,455,0.0,0.31486248970031694,0.3436575896921563
+Breast Cancer,data_inconsistency,medium,automated_cleaning,consistency rules,0.02924229999189265,455,455,0.0,0.3298735618591304,0.35911586185102307
+Breast Cancer,data_inconsistency,high,automated_cleaning,consistency rules,0.02803039998980239,455,455,0.0,0.31465387344360296,0.34268427343340535
+Breast Cancer,data_leakage,low,automated_cleaning,drop features with |corr| > 0.5,0.0017219000146724284,455,455,0.0,0.3723514080047604,0.37407330801943284
+Breast Cancer,data_leakage,medium,automated_cleaning,drop features with |corr| > 0.5,0.001736699981847778,455,455,0.0,0.3610548973083492,0.362791597290197
+Breast Cancer,data_leakage,high,automated_cleaning,drop features with |corr| > 0.5,0.0016856000002007931,455,455,0.0,0.3352041244506832,0.336889724450884
+Breast Cancer,domain_violations,low,automated_cleaning,IQR clipping,0.029323399998247623,455,455,0.0,0.3133342266082761,0.3426576266065237
+Breast Cancer,domain_violations,medium,automated_cleaning,IQR clipping,0.029184400016674772,455,455,0.0,0.3066358566284175,0.3358202566450923
+Breast Cancer,domain_violations,high,automated_cleaning,IQR clipping,0.027512899978319183,455,455,0.0,0.3247921466827389,0.3523050466610581
+Breast Cancer,duplicates,low,automated_cleaning,drop exact duplicates,0.0017653999966569245,477,455,-4.612159329140461,0.3126711845397945,0.3144365845364514
+Breast Cancer,duplicates,medium,automated_cleaning,drop exact duplicates,0.0016946000105235726,500,455,-9.0,0.3142421245574948,0.31593672456801836
+Breast Cancer,duplicates,high,automated_cleaning,drop exact duplicates,0.0016903000068850815,523,455,-13.001912045889103,0.32836985588073697,0.33006015588762205
+Breast Cancer,duplicates_minority,low,automated_cleaning,drop exact duplicates,0.0016955000173766166,477,455,-4.612159329140461,0.3515813350677487,0.3532768350851253
+Breast Cancer,duplicates_minority,medium,automated_cleaning,drop exact duplicates,0.0016861999756656587,500,455,-9.0,0.3652744293212886,0.3669606292969543
+Breast Cancer,duplicates_minority,high,automated_cleaning,drop exact duplicates,0.0017158999980892986,523,455,-13.001912045889103,0.35618615150451627,0.35790205150260557
+Breast Cancer,duplicates_targeted,low,automated_cleaning,drop exact duplicates,0.001687799987848848,477,455,-4.612159329140461,0.37036085128784146,0.3720486512756903
+Breast Cancer,duplicates_targeted,medium,automated_cleaning,drop exact duplicates,0.0017621000006329268,500,455,-9.0,0.3422517776489255,0.34401387764955843
+Breast Cancer,duplicates_targeted,high,automated_cleaning,drop exact duplicates,0.002245199983008206,523,455,-13.001912045889103,0.3677628040313718,0.37000800401438
+Breast Cancer,feature_noise,low,automated_cleaning,rank-order median smoothing,0.014054100000066683,455,455,0.0,0.3118860721588131,0.32594017215887977
+Breast Cancer,feature_noise,medium,automated_cleaning,rank-order median smoothing,0.014174400013871491,455,455,0.0,0.3379013538360592,0.3520757538499307
+Breast Cancer,feature_noise,high,automated_cleaning,rank-order median smoothing,0.014852499996777624,455,455,0.0,0.3169643878936766,0.3318168878904542
+Breast Cancer,feature_noise_targeted,low,automated_cleaning,rank-order median smoothing,0.013621800026157871,455,455,0.0,0.36600232124328586,0.3796241212694437
+Breast Cancer,feature_noise_targeted,medium,automated_cleaning,rank-order median smoothing,0.014873999985866249,455,455,0.0,0.356908559799194,0.37178255978506025
+Breast Cancer,feature_noise_targeted,high,automated_cleaning,rank-order median smoothing,0.013464000017847866,455,455,0.0,0.36869645118713357,0.38216045120498143
+Breast Cancer,imbalanced_feature_distribution,low,automated_cleaning,quantile transform,0.0158178000128828,455,455,0.0,0.3593354225158687,0.3751532225287515
+Breast Cancer,imbalanced_feature_distribution,medium,automated_cleaning,quantile transform,0.0161526000010781,455,455,0.0,0.37226700782775846,0.38841960782883656
+Breast Cancer,imbalanced_feature_distribution,high,automated_cleaning,quantile transform,0.015905999985989183,455,455,0.0,0.35499715805053683,0.370903158036526
+Breast Cancer,invalid_values,low,automated_cleaning,sentinel to NaN then impute,0.021397700009401888,455,455,0.0,0.3200254440307614,0.3414231440401633
+Breast Cancer,invalid_values,medium,automated_cleaning,sentinel to NaN then impute,0.02046699999482371,455,455,0.0,0.3395645618438716,0.36003156183869534
+Breast Cancer,invalid_values,high,automated_cleaning,sentinel to NaN then impute,0.020943499985150993,455,455,0.0,0.327668190002441,0.348611689987592
+Breast Cancer,missing_values,low,automated_cleaning,KNN imputation,0.01803120001568459,455,455,0.0,0.3329217433929441,0.3509529434086287
+Breast Cancer,missing_values,medium,automated_cleaning,KNN imputation,0.0207751999842003,455,455,0.0,0.3234624862670895,0.3442376862512898
+Breast Cancer,missing_values,high,automated_cleaning,KNN imputation,0.023414600000251085,455,455,0.0,0.3466391563415523,0.3700537563418034
+Breast Cancer,missing_values_mnar,low,automated_cleaning,KNN imputation,0.015208000026177615,455,455,0.0,0.35511183738708463,0.37031983741326224
+Breast Cancer,missing_values_mnar,medium,automated_cleaning,KNN imputation,0.01996740000322461,455,455,0.0,0.3425319194793696,0.36249931948259423
+Breast Cancer,missing_values_mnar,high,automated_cleaning,KNN imputation,0.023738699994282797,455,455,0.0,0.3060505390167233,0.3297892390110061
+Breast Cancer,outliers,low,automated_cleaning,IQR clipping,0.027733499999158084,455,455,0.0,0.32114124298095653,0.3488747429801146
+Breast Cancer,outliers,medium,automated_cleaning,IQR clipping,0.029505200014682487,455,455,0.0,0.3126945495605465,0.342199749575229
+Breast Cancer,outliers,high,automated_cleaning,IQR clipping,0.02794919998268597,455,455,0.0,0.31511378288269,0.34306298286537595
+Breast Cancer,outliers_targeted,low,automated_cleaning,IQR clipping,0.02813550000428222,455,455,0.0,0.3178911209106442,0.3460266209149264
+Breast Cancer,outliers_targeted,medium,automated_cleaning,IQR clipping,0.02703470000415109,455,455,0.0,0.321247816085815,0.3482825160899661
+Breast Cancer,outliers_targeted,high,automated_cleaning,IQR clipping,0.028959899995243177,455,455,0.0,0.3307497501373287,0.3597096501325719
+Breast Cancer,redundant_features,low,automated_cleaning,drop correlated features,0.002227399992989376,455,455,0.0,0.3411250114440914,0.3433524114370808
+Breast Cancer,redundant_features,medium,automated_cleaning,drop correlated features,0.00231869998970069,455,455,0.0,0.38380527496337863,0.3861239749530793
+Breast Cancer,redundant_features,high,automated_cleaning,drop correlated features,0.0025556999898981303,455,455,0.0,0.3391423225402828,0.34169802253018094
+Breast Cancer,typographical_errors,low,automated_cleaning,fuzzy match to known categories,0.0007387000077869743,455,455,0.0,0.3204348087310788,0.3211735087388658
+Breast Cancer,typographical_errors,medium,automated_cleaning,fuzzy match to known categories,0.0008018999942578375,455,455,0.0,0.321930885314941,0.32273278530919886
+Breast Cancer,typographical_errors,high,automated_cleaning,fuzzy match to known categories,0.000721300020813942,455,455,0.0,0.3354949951171872,0.33621629513800116
+German Credit,categorical_errors,low,automated_cleaning,validate against vocabulary,0.005666699988069013,800,800,0.0,0.4756252765655514,0.48129197655362044
+German Credit,categorical_errors,medium,automated_cleaning,validate against vocabulary,0.0058957000146619976,800,800,0.0,0.42091536521911593,0.42681106523377793
+German Credit,categorical_errors,high,automated_cleaning,validate against vocabulary,0.006336599995847791,800,800,0.0,0.4768159389495846,0.48315253894543236
+German Credit,class_imbalance,low,automated_cleaning,oversample minority,0.0009785000002011657,776,1120,44.329896907216494,0.5481259822845456,0.5491044822847467
+German Credit,class_imbalance,medium,automated_cleaning,oversample minority,0.0008106000022962689,740,1120,51.35135135135135,0.5253586769104,0.5261692769126962
+German Credit,class_imbalance,high,automated_cleaning,oversample minority,0.0008212999964598566,704,1120,59.09090909090909,0.5226716995239253,0.5234929995203852
+German Credit,contextual_errors,low,automated_cleaning,IQR clipping,0.0058991999831050634,800,800,0.0,0.39240550994873,0.3983047099318351
+German Credit,contextual_errors,medium,automated_cleaning,IQR clipping,0.006580200017197058,800,800,0.0,0.3914277553558347,0.39800795537303174
+German Credit,contextual_errors,high,automated_cleaning,IQR clipping,0.006813999993028119,800,800,0.0,0.3889489173889158,0.3957629173819439
+German Credit,data_heterogeneity,low,automated_cleaning,re-standardise features,0.0018490999937057495,800,800,0.0,0.4293081760406489,0.43115727603435466
+German Credit,data_heterogeneity,medium,automated_cleaning,re-standardise features,0.0018907000194303691,800,800,0.0,0.4518539905548092,0.45374469057423955
+German Credit,data_heterogeneity,high,automated_cleaning,re-standardise features,0.0019087000109720975,800,800,0.0,0.4216990470886226,0.4236077470995947
+German Credit,data_inconsistency,low,automated_cleaning,consistency rules,0.011564200016437098,800,800,0.0,0.4397392272949215,0.4513034273113586
+German Credit,data_inconsistency,medium,automated_cleaning,consistency rules,0.01095060000079684,800,800,0.0,0.4383327960968014,0.44928339609759826
+German Credit,data_inconsistency,high,automated_cleaning,consistency rules,0.0113314000191167,800,800,0.0,0.4257106781005856,0.4370420781197023
+German Credit,data_leakage,low,automated_cleaning,drop features with |corr| > 0.5,0.0005998000269755721,800,800,0.0,0.4395871162414547,0.44018691626843026
+German Credit,data_leakage,medium,automated_cleaning,drop features with |corr| > 0.5,0.0007903000223450363,800,800,0.0,0.4429597854614254,0.44375008548377043
+German Credit,data_leakage,high,automated_cleaning,drop features with |corr| > 0.5,0.0007673000218346715,800,800,0.0,0.4343931674957271,0.43516046751756177
+German Credit,domain_violations,low,automated_cleaning,IQR clipping,0.0058323999983258545,800,800,0.0,0.3948552608489985,0.4006876608473244
+German Credit,domain_violations,medium,automated_cleaning,IQR clipping,0.005970600002910942,800,800,0.0,0.3949403762817379,0.40091097628464883
+German Credit,domain_violations,high,automated_cleaning,IQR clipping,0.005979999987175688,800,800,0.0,0.40125298500061,0.4072329849877857
+German Credit,duplicates,low,automated_cleaning,drop exact duplicates,0.0021536999847739935,840,800,-4.761904761904762,0.4335470199584958,0.4357007199432698
+German Credit,duplicates,medium,automated_cleaning,drop exact duplicates,0.0019496000022627413,880,800,-9.090909090909092,0.4288682937622066,0.43081789376446933
+German Credit,duplicates,high,automated_cleaning,drop exact duplicates,0.0019461999763734639,920,800,-13.043478260869565,0.4710943698883052,0.4730405698646787
+German Credit,duplicates_minority,low,automated_cleaning,drop exact duplicates,0.0018866000173147768,840,800,-4.761904761904762,0.4854054450988766,0.4872920451161914
+German Credit,duplicates_minority,medium,automated_cleaning,drop exact duplicates,0.0018755999917630106,880,800,-9.090909090909092,0.436714172363281,0.438589772355044
+German Credit,duplicates_minority,high,automated_cleaning,drop exact duplicates,0.001952299993718043,920,800,-13.043478260869565,0.4443244934082028,0.44627679340192083
+German Credit,duplicates_targeted,low,automated_cleaning,drop exact duplicates,0.0019122000085189939,840,800,-4.761904761904762,0.4265239238739011,0.4284361238824201
+German Credit,duplicates_targeted,medium,automated_cleaning,drop exact duplicates,0.0019321999861858785,880,800,-9.090909090909092,0.42076325416564897,0.42269545415183485
+German Credit,duplicates_targeted,high,automated_cleaning,drop exact duplicates,0.001985800015972927,920,800,-13.043478260869565,0.4541931152343746,0.45617891525034754
+German Credit,feature_noise,low,automated_cleaning,rank-order median smoothing,0.0038249999925028533,800,800,0.0,0.4804384708404538,0.4842634708329567
+German Credit,feature_noise,medium,automated_cleaning,rank-order median smoothing,0.003867200022796169,800,800,0.0,0.45721411705017057,0.46108131707296673
+German Credit,feature_noise,high,automated_cleaning,rank-order median smoothing,0.003952300001401454,800,800,0.0,0.46048045158386186,0.4644327515852633
+German Credit,feature_noise_targeted,low,automated_cleaning,rank-order median smoothing,0.001973700011149049,800,800,0.0,0.472516298294067,0.47448999830521604
+German Credit,feature_noise_targeted,medium,automated_cleaning,rank-order median smoothing,0.0019631999894045293,800,800,0.0,0.4486098289489743,0.4505730289383788
+German Credit,feature_noise_targeted,high,automated_cleaning,rank-order median smoothing,0.0019579000072553754,800,800,0.0,0.4339356422424312,0.43589354224968657
+German Credit,imbalanced_feature_distribution,low,automated_cleaning,quantile transform,0.006906000024173409,800,800,0.0,0.4544794559478756,0.461385455972049
+German Credit,imbalanced_feature_distribution,medium,automated_cleaning,quantile transform,0.006928699993295595,800,800,0.0,0.4179449081420895,0.4248736081353851
+German Credit,imbalanced_feature_distribution,high,automated_cleaning,quantile transform,0.007069999992381781,800,800,0.0,0.4431738853454587,0.4502438853378405
+German Credit,invalid_values,low,automated_cleaning,sentinel to NaN then impute,0.004145699989749119,800,800,0.0,0.4200947284698482,0.4242404284595973
+German Credit,invalid_values,medium,automated_cleaning,sentinel to NaN then impute,0.004148199979681522,800,800,0.0,0.4574677944183348,0.4616159943980163
+German Credit,invalid_values,high,automated_cleaning,sentinel to NaN then impute,0.004323800007114187,800,800,0.0,0.4293351173400876,0.4336589173472018
+German Credit,missing_values,low,automated_cleaning,KNN imputation,0.015763899980811402,800,800,0.0,0.4267699718475337,0.4425338718283451
+German Credit,missing_values,medium,automated_cleaning,KNN imputation,0.022997099993517622,800,800,0.0,0.45004796981811507,0.4730450698116327
+German Credit,missing_values,high,automated_cleaning,KNN imputation,0.03427390000433661,800,800,0.0,0.4235272407531733,0.4578011407575099
+German Credit,missing_values_mnar,low,automated_cleaning,KNN imputation,0.014621599984820932,800,800,0.0,0.435334205627441,0.44995580561226195
+German Credit,missing_values_mnar,medium,automated_cleaning,KNN imputation,0.02736370000638999,800,800,0.0,0.4601838588714597,0.4875475588778497
+German Credit,missing_values_mnar,high,automated_cleaning,KNN imputation,0.038689999986672774,800,800,0.0,0.4443185329437252,0.48300853293039797
+German Credit,outliers,low,automated_cleaning,IQR clipping,0.006048099981853738,800,800,0.0,0.4043161869049069,0.41036428688676063
+German Credit,outliers,medium,automated_cleaning,IQR clipping,0.006325599999399856,800,800,0.0,0.38842773437499967,0.3947533343743995
+German Credit,outliers,high,automated_cleaning,IQR clipping,0.006466799997724593,800,800,0.0,0.4004018306732174,0.406868630670942
+German Credit,outliers_targeted,low,automated_cleaning,IQR clipping,0.005998099979478866,800,800,0.0,0.3952627182006834,0.4012608181801623
+German Credit,outliers_targeted,medium,automated_cleaning,IQR clipping,0.005903800018131733,800,800,0.0,0.4008979797363278,0.4068017797544595
+German Credit,outliers_targeted,high,automated_cleaning,IQR clipping,0.00592639998649247,800,800,0.0,0.394931316375732,0.40085771636222445
+German Credit,redundant_features,low,automated_cleaning,drop correlated features,0.0010824999772012234,800,800,0.0,0.4176695346832273,0.41875203466042854
+German Credit,redundant_features,medium,automated_cleaning,drop correlated features,0.0010833999840542674,800,800,0.0,0.45821237564086886,0.45929577562492313
+German Credit,redundant_features,high,automated_cleaning,drop correlated features,0.0010922999936155975,800,800,0.0,0.44330668449401833,0.44439898448763393
+German Credit,typographical_errors,low,automated_cleaning,fuzzy match to known categories,0.01808470001560636,800,800,0.0,0.43270349502563443,0.4507881950412408
+German Credit,typographical_errors,medium,automated_cleaning,fuzzy match to known categories,0.02250560000538826,800,800,0.0,0.4764750003814693,0.49898060038685754
+German Credit,typographical_errors,high,automated_cleaning,fuzzy match to known categories,0.026358800008893013,800,800,0.0,0.4298002719879148,0.45615907199680783
+Adult Income,categorical_errors,low,automated_cleaning,validate against vocabulary,0.020957499975338578,24129,24129,0.0,6.551323175430299,6.572280675405637
+Adult Income,categorical_errors,medium,automated_cleaning,validate against vocabulary,0.014053799997782335,24129,24129,0.0,5.475568532943726,5.489622332941508
+Adult Income,categorical_errors,high,automated_cleaning,validate against vocabulary,0.014070999983232468,24129,24129,0.0,6.606424331665039,6.6204953316482715
+Adult Income,class_imbalance,low,automated_cleaning,oversample minority,0.0037339999980758876,23529,36246,54.04819584342726,9.780426502227783,9.784160502225859
+Adult Income,class_imbalance,medium,automated_cleaning,oversample minority,0.0040871000092010945,22628,36246,60.18207530493195,9.863900661468506,9.867987761477707
+Adult Income,class_imbalance,high,automated_cleaning,oversample minority,0.004581800021696836,21727,36246,66.82468817600221,9.90466570854187,9.909247508563567
+Adult Income,contextual_errors,low,automated_cleaning,IQR clipping,0.008381999999983236,24129,24129,0.0,7.104400634765625,7.112782634765608
+Adult Income,contextual_errors,medium,automated_cleaning,IQR clipping,0.0074680999969132245,24129,24129,0.0,7.340775966644287,7.3482440666412
+Adult Income,contextual_errors,high,automated_cleaning,IQR clipping,0.007601999997859821,24129,24129,0.0,7.157961845397949,7.165563845395809
+Adult Income,data_heterogeneity,low,automated_cleaning,re-standardise features,0.0043981999915558845,24129,24129,0.0,6.774591684341431,6.7789898843329865
+Adult Income,data_heterogeneity,medium,automated_cleaning,re-standardise features,0.0043323999852873385,24129,24129,0.0,6.736476421356201,6.7408088213414885
+Adult Income,data_heterogeneity,high,automated_cleaning,re-standardise features,0.004264199989847839,24129,24129,0.0,6.6277618408203125,6.63202604081016
+Adult Income,data_inconsistency,low,automated_cleaning,consistency rules,0.024311199988005683,24129,24129,0.0,6.586014032363892,6.610325232351897
+Adult Income,data_inconsistency,medium,automated_cleaning,consistency rules,0.024653600004967302,24129,24129,0.0,6.0200514793396,6.044705079344567
+Adult Income,data_inconsistency,high,automated_cleaning,consistency rules,0.025215100002242252,24129,24129,0.0,6.487119674682617,6.512334774684859
+Adult Income,data_leakage,low,automated_cleaning,drop features with |corr| > 0.5,0.002559800021117553,24129,24129,0.0,6.4334845542907715,6.436044354311889
+Adult Income,data_leakage,medium,automated_cleaning,drop features with |corr| > 0.5,0.0026289999950677156,24129,24129,0.0,5.81433629989624,5.816965299891308
+Adult Income,data_leakage,high,automated_cleaning,drop features with |corr| > 0.5,0.0025402999890502542,24129,24129,0.0,6.823119640350342,6.825659940339392
+Adult Income,domain_violations,low,automated_cleaning,IQR clipping,0.006990999972913414,24129,24129,0.0,7.296759128570557,7.30375012854347
+Adult Income,domain_violations,medium,automated_cleaning,IQR clipping,0.007318099989788607,24129,24129,0.0,7.314222574234009,7.321540674223797
+Adult Income,domain_violations,high,automated_cleaning,IQR clipping,0.007626000005984679,24129,24129,0.0,7.137870311737061,7.145496311743046
+Adult Income,duplicates,low,automated_cleaning,drop exact duplicates,0.018452999996952713,25335,24116,-4.8115255575291105,6.467155933380127,6.48560893337708
+Adult Income,duplicates,medium,automated_cleaning,drop exact duplicates,0.017650900001171976,26541,24116,-9.136807203948608,6.833273887634277,6.850924787635449
+Adult Income,duplicates,high,automated_cleaning,drop exact duplicates,0.01949070001137443,27748,24116,-13.089231656335592,6.517630577087402,6.537121277098777
+Adult Income,duplicates_minority,low,automated_cleaning,drop exact duplicates,0.018004800018388778,25335,24116,-4.8115255575291105,6.730894327163696,6.748899127182085
+Adult Income,duplicates_minority,medium,automated_cleaning,drop exact duplicates,0.01810810001916252,26541,24116,-9.136807203948608,6.6843180656433105,6.702426165662473
+Adult Income,duplicates_minority,high,automated_cleaning,drop exact duplicates,0.019204200012609363,27748,24116,-13.089231656335592,6.656099796295166,6.675303996307775
+Adult Income,duplicates_targeted,low,automated_cleaning,drop exact duplicates,0.017524800001410767,25335,24116,-4.8115255575291105,6.521142959594727,6.538667759596137
+Adult Income,duplicates_targeted,medium,automated_cleaning,drop exact duplicates,0.01795119998860173,26541,24116,-9.136807203948608,6.562533617019653,6.580484817008255
+Adult Income,duplicates_targeted,high,automated_cleaning,drop exact duplicates,0.019108599983155727,27748,24116,-13.089231656335592,6.476868152618408,6.495976752601564
+Adult Income,feature_noise,low,automated_cleaning,rank-order median smoothing,0.0347777999995742,24129,24129,0.0,6.737056255340576,6.77183405534015
+Adult Income,feature_noise,medium,automated_cleaning,rank-order median smoothing,0.03580730000976473,24129,24129,0.0,6.692475080490112,6.728282380499877
+Adult Income,feature_noise,high,automated_cleaning,rank-order median smoothing,0.03506659998674877,24129,24129,0.0,6.694973945617676,6.7300405456044246
+Adult Income,feature_noise_targeted,low,automated_cleaning,rank-order median smoothing,0.03336030000355095,24129,24129,0.0,6.631321668624878,6.664681968628429
+Adult Income,feature_noise_targeted,medium,automated_cleaning,rank-order median smoothing,0.03247330000158399,24129,24129,0.0,6.615578889846802,6.648052189848386
+Adult Income,feature_noise_targeted,high,automated_cleaning,rank-order median smoothing,0.035862999997334555,24129,24129,0.0,6.771480560302734,6.807343560300069
+Adult Income,imbalanced_feature_distribution,low,automated_cleaning,quantile transform,0.022896300011780113,24129,24129,0.0,6.610815525054932,6.633711825066712
+Adult Income,imbalanced_feature_distribution,medium,automated_cleaning,quantile transform,0.02335869998205453,24129,24129,0.0,6.594853401184082,6.618212101166137
+Adult Income,imbalanced_feature_distribution,high,automated_cleaning,quantile transform,0.022322600008919835,24129,24129,0.0,6.652336597442627,6.674659197451547
+Adult Income,invalid_values,low,automated_cleaning,sentinel to NaN then impute,0.009110999992117286,24129,24129,0.0,6.644829034805298,6.653940034797415
+Adult Income,invalid_values,medium,automated_cleaning,sentinel to NaN then impute,0.009173200000077486,24129,24129,0.0,6.044198036193848,6.053371236193925
+Adult Income,invalid_values,high,automated_cleaning,sentinel to NaN then impute,0.009273999981814995,24129,24129,0.0,6.5291221141815186,6.5383961141633336
+Adult Income,missing_values,low,automated_cleaning,KNN imputation,11.99295610000263,24129,24129,0.0,6.4319894313812265,18.424945531383855
+Adult Income,missing_values,medium,automated_cleaning,KNN imputation,24.42247530000168,24129,24129,0.0,6.604077339172363,31.026552639174042
+Adult Income,missing_values,high,automated_cleaning,KNN imputation,32.84507890001987,24129,24129,0.0,6.624115228652954,39.469194128672825
+Adult Income,missing_values_mnar,low,automated_cleaning,KNN imputation,12.72347749999608,24129,24129,0.0,6.63567852973938,19.35915602973546
+Adult Income,missing_values_mnar,medium,automated_cleaning,KNN imputation,21.53139899999951,24129,24129,0.0,6.520087242126465,28.051486242125975
+Adult Income,missing_values_mnar,high,automated_cleaning,KNN imputation,26.470807000005152,24129,24129,0.0,6.458487272262573,32.929294272267725
+Adult Income,outliers,low,automated_cleaning,IQR clipping,0.007706000003963709,24129,24129,0.0,6.768984794616699,6.776690794620663
+Adult Income,outliers,medium,automated_cleaning,IQR clipping,0.007266800006618723,24129,24129,0.0,6.948816776275635,6.9560835762822535
+Adult Income,outliers,high,automated_cleaning,IQR clipping,0.007747600000584498,24129,24129,0.0,6.938575506210327,6.946323106210912
+Adult Income,outliers_targeted,low,automated_cleaning,IQR clipping,0.007568500004708767,24129,24129,0.0,6.9824724197387695,6.990040919743478
+Adult Income,outliers_targeted,medium,automated_cleaning,IQR clipping,0.0072791000129655,24129,24129,0.0,7.005185604095459,7.0124647041084245
+Adult Income,outliers_targeted,high,automated_cleaning,IQR clipping,0.007680999988224357,24129,24129,0.0,7.052407741546631,7.060088741534855
+Adult Income,redundant_features,low,automated_cleaning,drop correlated features,0.003040000010514632,24129,24129,0.0,7.490629434585571,7.493669434596086
+Adult Income,redundant_features,medium,automated_cleaning,drop correlated features,0.004931600007694215,24129,24129,0.0,7.344581842422485,7.34951344243018
+Adult Income,redundant_features,high,automated_cleaning,drop correlated features,0.0048180999874603,24129,24129,0.0,6.686820030212402,6.691638130199863
+Adult Income,typographical_errors,low,automated_cleaning,fuzzy match to known categories,1.2276740000233985,24129,24129,0.0,6.640738248825073,7.868412248848472
+Adult Income,typographical_errors,medium,automated_cleaning,fuzzy match to known categories,1.7549681999953464,24129,24129,0.0,6.519633054733276,8.274601254728623
+Adult Income,typographical_errors,high,automated_cleaning,fuzzy match to known categories,2.371276999998372,24129,24129,0.0,6.450803518295288,8.82208051829366
+Bank Marketing,categorical_errors,low,automated_cleaning,validate against vocabulary,0.02513380002346821,36168,36168,0.0,10.596356630325316,10.621490430348784
+Bank Marketing,categorical_errors,medium,automated_cleaning,validate against vocabulary,0.02446880002389662,36168,36168,0.0,10.518144607543945,10.542613407567842
+Bank Marketing,categorical_errors,high,automated_cleaning,validate against vocabulary,0.0243278999987524,36168,36168,0.0,10.440898895263672,10.465226795262424
+Bank Marketing,class_imbalance,low,automated_cleaning,oversample minority,0.007458899985067546,35745,63874,78.69352356973003,18.617334604263306,18.624793504248373
+Bank Marketing,class_imbalance,medium,automated_cleaning,oversample minority,0.0072355000011157244,35111,63874,81.92019594998719,18.70957612991333,18.716811629914446
+Bank Marketing,class_imbalance,high,automated_cleaning,oversample minority,0.007287599990377203,34476,63874,85.2709130989674,18.853310346603394,18.86059794659377
+Bank Marketing,contextual_errors,low,automated_cleaning,IQR clipping,0.011244599998462945,36168,36168,0.0,10.699947834014893,10.711192434013356
+Bank Marketing,contextual_errors,medium,automated_cleaning,IQR clipping,0.01329139998415485,36168,36168,0.0,10.702542304992678,10.715833704976832
+Bank Marketing,contextual_errors,high,automated_cleaning,IQR clipping,0.013243299996247515,36168,36168,0.0,10.58805847167969,10.601301771675937
+Bank Marketing,data_heterogeneity,low,automated_cleaning,re-standardise features,0.007210400013718754,36168,36168,0.0,10.040446996688843,10.047657396702562
+Bank Marketing,data_heterogeneity,medium,automated_cleaning,re-standardise features,0.007129000005079433,36168,36168,0.0,9.94898009300232,9.956109093007399
+Bank Marketing,data_heterogeneity,high,automated_cleaning,re-standardise features,0.006839400011813268,36168,36168,0.0,9.887353658676147,9.89419305868796
+Bank Marketing,data_inconsistency,low,automated_cleaning,consistency rules,0.0345050000178162,36168,36168,0.0,10.253700494766235,10.288205494784052
+Bank Marketing,data_inconsistency,medium,automated_cleaning,consistency rules,0.033966500021051615,36168,36168,0.0,10.039613246917723,10.073579746938774
+Bank Marketing,data_inconsistency,high,automated_cleaning,consistency rules,0.03445919998921454,36168,36168,0.0,10.079585790634155,10.11404499062337
+Bank Marketing,data_leakage,low,automated_cleaning,drop features with |corr| > 0.5,0.004480700008571148,36168,36168,0.0,10.273086309432983,10.277567009441555
+Bank Marketing,data_leakage,medium,automated_cleaning,drop features with |corr| > 0.5,0.004084099986357614,36168,36168,0.0,10.035733222961426,10.039817322947783
+Bank Marketing,data_leakage,high,automated_cleaning,drop features with |corr| > 0.5,0.004100199992535636,36168,36168,0.0,10.272782802581787,10.276883002574323
+Bank Marketing,domain_violations,low,automated_cleaning,IQR clipping,0.012182499980553985,36168,36168,0.0,10.58766746520996,10.599849965190513
+Bank Marketing,domain_violations,medium,automated_cleaning,IQR clipping,0.011770200013415888,36168,36168,0.0,10.557708501815796,10.569478701829212
+Bank Marketing,domain_violations,high,automated_cleaning,IQR clipping,0.012293999985558912,36168,36168,0.0,10.566758394241333,10.579052394226892
+Bank Marketing,duplicates,low,automated_cleaning,drop exact duplicates,0.028828199981944636,37976,36168,-4.760901622077101,10.27008056640625,10.298908766388195
+Bank Marketing,duplicates,medium,automated_cleaning,drop exact duplicates,0.03050349999102764,39784,36168,-9.089081037603057,10.204885005950928,10.235388505941955
+Bank Marketing,duplicates,high,automated_cleaning,drop exact duplicates,0.03012710000621155,41593,36168,-13.043060130310389,10.155013799667358,10.18514089967357
+Bank Marketing,duplicates_minority,low,automated_cleaning,drop exact duplicates,0.027223299985053018,37976,36168,-4.760901622077101,9.824184656143188,9.851407956128241
+Bank Marketing,duplicates_minority,medium,automated_cleaning,drop exact duplicates,0.02996420001727529,39784,36168,-9.089081037603057,9.822263240814209,9.852227440831484
+Bank Marketing,duplicates_minority,high,automated_cleaning,drop exact duplicates,0.0302574000088498,41593,36168,-13.043060130310389,9.595065355300903,9.625322755309753
+Bank Marketing,duplicates_targeted,low,automated_cleaning,drop exact duplicates,0.028282700019190088,37976,36168,-4.760901622077101,9.754909753799437,9.783192453818627
+Bank Marketing,duplicates_targeted,medium,automated_cleaning,drop exact duplicates,0.028825100016547367,39784,36168,-9.089081037603057,9.909622192382812,9.93844729239936
+Bank Marketing,duplicates_targeted,high,automated_cleaning,drop exact duplicates,0.031402000022353604,41593,36168,-13.043060130310389,9.75741720199585,9.788819202018203
+Bank Marketing,feature_noise,low,automated_cleaning,rank-order median smoothing,0.06696020002709702,36168,36168,0.0,11.046104431152342,11.113064631179439
+Bank Marketing,feature_noise,medium,automated_cleaning,rank-order median smoothing,0.06835620000492781,36168,36168,0.0,10.89684271812439,10.965198918129317
+Bank Marketing,feature_noise,high,automated_cleaning,rank-order median smoothing,0.06511440000031143,36168,36168,0.0,10.906718015670776,10.971832415671088
+Bank Marketing,feature_noise_targeted,low,automated_cleaning,rank-order median smoothing,0.05750530000659637,36168,36168,0.0,10.186422586441038,10.243927886447635
+Bank Marketing,feature_noise_targeted,medium,automated_cleaning,rank-order median smoothing,0.05556909998995252,36168,36168,0.0,9.874704122543335,9.930273222533287
+Bank Marketing,feature_noise_targeted,high,automated_cleaning,rank-order median smoothing,0.059802800009492785,36168,36168,0.0,9.465891599655151,9.525694399664644
+Bank Marketing,imbalanced_feature_distribution,low,automated_cleaning,quantile transform,0.039547699998365715,36168,36168,0.0,9.892003297805788,9.931550997804154
+Bank Marketing,imbalanced_feature_distribution,medium,automated_cleaning,quantile transform,0.03940919999149628,36168,36168,0.0,9.988990306854246,10.028399506845743
+Bank Marketing,imbalanced_feature_distribution,high,automated_cleaning,quantile transform,0.039482699998188764,36168,36168,0.0,9.649001359939577,9.688484059937766
+Bank Marketing,invalid_values,low,automated_cleaning,sentinel to NaN then impute,0.017702599987387657,36168,36168,0.0,10.227730989456179,10.245433589443566
+Bank Marketing,invalid_values,medium,automated_cleaning,sentinel to NaN then impute,0.016937300009885803,36168,36168,0.0,10.472615957260132,10.489553257270018
+Bank Marketing,invalid_values,high,automated_cleaning,sentinel to NaN then impute,0.01735529999132268,36168,36168,0.0,10.378980636596681,10.396335936588004
+Bank Marketing,missing_values,low,automated_cleaning,KNN imputation,28.495289200014668,36168,36168,0.0,9.95952296257019,38.45481216258486
+Bank Marketing,missing_values,medium,automated_cleaning,KNN imputation,55.155553500022506,36168,36168,0.0,9.981639385223389,65.1371928852459
+Bank Marketing,missing_values,high,automated_cleaning,KNN imputation,77.42875260001165,36168,36168,0.0,8.165710449218748,85.5944630492304
+Bank Marketing,missing_values_mnar,low,automated_cleaning,KNN imputation,33.124511999980314,36168,36168,0.0,10.046135663986208,43.17064766396652
+Bank Marketing,missing_values_mnar,medium,automated_cleaning,KNN imputation,54.39679480000632,36168,36168,0.0,9.630290746688843,64.02708554669516
+Bank Marketing,missing_values_mnar,high,automated_cleaning,KNN imputation,66.94465900000068,36168,36168,0.0,10.029059648513792,76.97371864851448
+Bank Marketing,outliers,low,automated_cleaning,IQR clipping,0.011505800008308142,36168,36168,0.0,10.273203134536743,10.284708934545051
+Bank Marketing,outliers,medium,automated_cleaning,IQR clipping,0.010539900016738102,36168,36168,0.0,10.725826501846315,10.736366401863053
+Bank Marketing,outliers,high,automated_cleaning,IQR clipping,0.01125859998865053,36168,36168,0.0,10.264553546905516,10.275812146894166
+Bank Marketing,outliers_targeted,low,automated_cleaning,IQR clipping,0.010343600006308407,36168,36168,0.0,10.695929527282713,10.706273127289021
+Bank Marketing,outliers_targeted,medium,automated_cleaning,IQR clipping,0.011208599986275658,36168,36168,0.0,10.395173072814941,10.406381672801217
+Bank Marketing,outliers_targeted,high,automated_cleaning,IQR clipping,0.012842299998737872,36168,36168,0.0,10.401869773864746,10.414712073863484
+Bank Marketing,redundant_features,low,automated_cleaning,drop correlated features,0.007361800002399832,36168,36168,0.0,10.026667833328247,10.034029633330647
+Bank Marketing,redundant_features,medium,automated_cleaning,drop correlated features,0.004976500000339001,36168,36168,0.0,10.604783296585083,10.609759796585422
+Bank Marketing,redundant_features,high,automated_cleaning,drop correlated features,0.00753979998989962,36168,36168,0.0,10.502060651779177,10.509600451769076
+Bank Marketing,typographical_errors,low,automated_cleaning,fuzzy match to known categories,1.1796735000098124,36168,36168,0.0,10.103356838226318,11.28303033823613
+Bank Marketing,typographical_errors,medium,automated_cleaning,fuzzy match to known categories,1.8100373999914154,36168,36168,0.0,10.42388606071472,12.233923460706135
+Bank Marketing,typographical_errors,high,automated_cleaning,fuzzy match to known categories,2.507527600013418,36168,36168,0.0,9.15974235534668,11.667269955360098
+Telco Churn,categorical_errors,low,automated_cleaning,validate against vocabulary,0.01131939998595044,5625,5625,0.0,1.7637555599212642,1.7750749599072146
+Telco Churn,categorical_errors,medium,automated_cleaning,validate against vocabulary,0.011281199986115098,5625,5625,0.0,1.7401034832000728,1.751384683186188
+Telco Churn,categorical_errors,high,automated_cleaning,validate against vocabulary,0.011087599996244535,5625,5625,0.0,1.7555754184722898,1.7666630184685344
+Telco Churn,class_imbalance,low,automated_cleaning,oversample minority,0.0014745999942533672,5476,8260,50.8400292184076,2.522076368331909,2.5235509683261625
+Telco Churn,class_imbalance,medium,automated_cleaning,oversample minority,0.0014364999951794744,5252,8260,57.27341964965728,2.5025737285614014,2.504010228556581
+Telco Churn,class_imbalance,high,automated_cleaning,oversample minority,0.0016920999914873391,5027,8260,64.31271135866322,2.5065526962280273,2.5082447962195147
+Telco Churn,contextual_errors,low,automated_cleaning,IQR clipping,0.004758299997774884,5625,5625,0.0,1.8691608905792234,1.8739191905769983
+Telco Churn,contextual_errors,medium,automated_cleaning,IQR clipping,0.003881899989210069,5625,5625,0.0,1.8721075057983396,1.8759894057875497
+Telco Churn,contextual_errors,high,automated_cleaning,IQR clipping,0.004446100007044151,5625,5625,0.0,1.8633470535278316,1.8677931535348757
+Telco Churn,data_heterogeneity,low,automated_cleaning,re-standardise features,0.002523500006645918,5625,5625,0.0,1.7788815498352049,1.7814050498418508
+Telco Churn,data_heterogeneity,medium,automated_cleaning,re-standardise features,0.0015504999901168048,5625,5625,0.0,1.765024423599243,1.7665749235893597
+Telco Churn,data_heterogeneity,high,automated_cleaning,re-standardise features,0.0015458999841939658,5625,5625,0.0,1.782234191894531,1.783780091878725
+Telco Churn,data_inconsistency,low,automated_cleaning,consistency rules,0.013583499996457249,5625,5625,0.0,1.7781043052673335,1.7916878052637908
+Telco Churn,data_inconsistency,medium,automated_cleaning,consistency rules,0.014101500011747703,5625,5625,0.0,1.782058715820312,1.7961602158320598
+Telco Churn,data_inconsistency,high,automated_cleaning,consistency rules,0.012623899994650856,5625,5625,0.0,1.7809145450592039,1.7935384450538547
+Telco Churn,data_leakage,low,automated_cleaning,drop features with |corr| > 0.5,0.0007746999908704311,5625,5625,0.0,1.760179758071899,1.7609544580627694
+Telco Churn,data_leakage,medium,automated_cleaning,drop features with |corr| > 0.5,0.0008887999865692109,5625,5625,0.0,1.7367944717407222,1.7376832717272914
+Telco Churn,data_leakage,high,automated_cleaning,drop features with |corr| > 0.5,0.0009239999926649034,5625,5625,0.0,1.7089252471923826,1.7098492471850475
+Telco Churn,domain_violations,low,automated_cleaning,IQR clipping,0.004350400005932897,5625,5625,0.0,1.8377370834350584,1.8420874834409913
+Telco Churn,domain_violations,medium,automated_cleaning,IQR clipping,0.0038311000098474324,5625,5625,0.0,1.8479747772216795,1.851805877231527
+Telco Churn,domain_violations,high,automated_cleaning,IQR clipping,0.0040686000138521194,5625,5625,0.0,1.8976387977600095,1.9017073977738617
+Telco Churn,duplicates,low,automated_cleaning,drop exact duplicates,0.006712900009006262,5906,5610,-5.011852353538774,1.7395145893096922,1.7462274893186984
+Telco Churn,duplicates,medium,automated_cleaning,drop exact duplicates,0.006823100004112348,6187,5610,-9.326006141910458,1.7375442981719966,1.744367398176109
+Telco Churn,duplicates,high,automated_cleaning,drop exact duplicates,0.007234899996547028,6468,5610,-13.26530612244898,1.7280421257019039,1.7352770256984509
+Telco Churn,duplicates_minority,low,automated_cleaning,drop exact duplicates,0.007031200017081574,5906,5610,-5.011852353538774,1.7966942787170408,1.8037254787341224
+Telco Churn,duplicates_minority,medium,automated_cleaning,drop exact duplicates,0.007269699999596924,6187,5610,-9.326006141910458,1.8223638534545896,1.8296335534541865
+Telco Churn,duplicates_minority,high,automated_cleaning,drop exact duplicates,0.006891199998790398,6468,5610,-13.26530612244898,1.8287975788116453,1.8356887788104357
+Telco Churn,duplicates_targeted,low,automated_cleaning,drop exact duplicates,0.006667400011792779,5906,5610,-5.011852353538774,1.7699089050292967,1.7765763050410894
+Telco Churn,duplicates_targeted,medium,automated_cleaning,drop exact duplicates,0.007053699984680861,6187,5610,-9.326006141910458,1.7565038204193113,1.7635575204039922
+Telco Churn,duplicates_targeted,high,automated_cleaning,drop exact duplicates,0.006862200010800734,6468,5610,-13.26530612244898,1.757073879241943,1.7639360792527436
+Telco Churn,feature_noise,low,automated_cleaning,rank-order median smoothing,0.007107800018275157,5625,5625,0.0,1.7641882896423335,1.7712960896606087
+Telco Churn,feature_noise,medium,automated_cleaning,rank-order median smoothing,0.007611600012751296,5625,5625,0.0,1.772245407104492,1.7798570071172433
+Telco Churn,feature_noise,high,automated_cleaning,rank-order median smoothing,0.00690869998652488,5625,5625,0.0,1.7846059799194331,1.791514679905958
+Telco Churn,feature_noise_targeted,low,automated_cleaning,rank-order median smoothing,0.005620699987048283,5625,5625,0.0,1.848173141479492,1.8537938414665402
+Telco Churn,feature_noise_targeted,medium,automated_cleaning,rank-order median smoothing,0.005406000011134893,5625,5625,0.0,1.8048236370086665,1.8102296370198014
+Telco Churn,feature_noise_targeted,high,automated_cleaning,rank-order median smoothing,0.005378100002417341,5625,5625,0.0,1.8057160377502441,1.8110941377526615
+Telco Churn,imbalanced_feature_distribution,low,automated_cleaning,quantile transform,0.008305299998028204,5625,5625,0.0,1.8024659156799316,1.8107712156779598
+Telco Churn,imbalanced_feature_distribution,medium,automated_cleaning,quantile transform,0.008181599987437949,5625,5625,0.0,1.797448396682739,1.805629996670177
+Telco Churn,imbalanced_feature_distribution,high,automated_cleaning,quantile transform,0.008589800010668114,5625,5625,0.0,1.77505612373352,1.7836459237441882
+Telco Churn,invalid_values,low,automated_cleaning,sentinel to NaN then impute,0.003607399994507432,5625,5625,0.0,1.740498304367065,1.7441057043615724
+Telco Churn,invalid_values,medium,automated_cleaning,sentinel to NaN then impute,0.003303799981949851,5625,5625,0.0,1.7547841072082517,1.7580879071902016
+Telco Churn,invalid_values,high,automated_cleaning,sentinel to NaN then impute,0.0032620000129099935,5625,5625,0.0,1.7401530742645261,1.7434150742774361
+Telco Churn,missing_values,low,automated_cleaning,KNN imputation,0.5331771000055596,5625,5625,0.0,1.7135605812072752,2.246737681212835
+Telco Churn,missing_values,medium,automated_cleaning,KNN imputation,1.0400960000115447,5625,5625,0.0,1.7350502014160152,2.77514620142756
+Telco Churn,missing_values,high,automated_cleaning,KNN imputation,1.3365090000152122,5625,5625,0.0,1.6953406333923338,3.031849633407546
+Telco Churn,missing_values_mnar,low,automated_cleaning,KNN imputation,0.534184499992989,5625,5625,0.0,1.7792215347290037,2.313406034721993
+Telco Churn,missing_values_mnar,medium,automated_cleaning,KNN imputation,0.8483194999862462,5625,5625,0.0,1.7609579563140867,2.609277456300333
+Telco Churn,missing_values_mnar,high,automated_cleaning,KNN imputation,0.9941887999884784,5625,5625,0.0,1.7865247726440425,2.780713572632521
+Telco Churn,outliers,low,automated_cleaning,IQR clipping,0.004059300001244992,5625,5625,0.0,1.969504833221435,1.97356413322268
+Telco Churn,outliers,medium,automated_cleaning,IQR clipping,0.0041874999878928065,5625,5625,0.0,1.87819504737854,1.8823825473664328
+Telco Churn,outliers,high,automated_cleaning,IQR clipping,0.003962099988711998,5625,5625,0.0,1.8686146736145015,1.8725767736032135
+Telco Churn,outliers_targeted,low,automated_cleaning,IQR clipping,0.004128999979002401,5625,5625,0.0,1.8526825904846187,1.856811590463621
+Telco Churn,outliers_targeted,medium,automated_cleaning,IQR clipping,0.003950900019844994,5625,5625,0.0,1.8255288600921629,1.8294797601120079
+Telco Churn,outliers_targeted,high,automated_cleaning,IQR clipping,0.004168299987213686,5625,5625,0.0,1.861018657684326,1.8651869576715396
+Telco Churn,redundant_features,low,automated_cleaning,drop correlated features,0.0011036999931093305,5625,5625,0.0,1.7736206054687496,1.7747243054618589
+Telco Churn,redundant_features,medium,automated_cleaning,drop correlated features,0.001358800014713779,5625,5625,0.0,1.757834672927856,1.7591934729425698
+Telco Churn,redundant_features,high,automated_cleaning,drop correlated features,0.001646199991228059,5625,5625,0.0,1.7706317901611326,1.7722779901523606
+Telco Churn,typographical_errors,low,automated_cleaning,fuzzy match to known categories,0.17445690001477487,5625,5625,0.0,1.7946550846099851,1.96911198462476
+Telco Churn,typographical_errors,medium,automated_cleaning,fuzzy match to known categories,0.24308640000526793,5625,5625,0.0,1.7445554733276367,1.9876418733329047
+Telco Churn,typographical_errors,high,automated_cleaning,fuzzy match to known categories,0.3065065999981016,5625,5625,0.0,1.7567400932312007,2.0632466932293023

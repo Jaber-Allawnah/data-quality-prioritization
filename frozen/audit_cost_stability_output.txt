@@ -1,0 +1,80 @@
+==============================================================================
+0. SHAPE AND LABEL
+==============================================================================
+previous rows: 300   current rows: 300
+feature_noise label(s): ['rank-order median smoothing']
+rows still carrying the stale label: 0
+matched cells: 300 of 300
+
+==============================================================================
+1. CELL-BY-CELL MEDIAN TIMING
+==============================================================================
+median absolute change : 0.000515s
+max absolute change    : 19.851944s
+median |relative| change: 5.9%
+
+largest 8 absolute movers:
+       Dataset          Error_Type Severity  Clean_Seconds_prev  Clean_Seconds_curr   delta_s   rel_pct
+Bank Marketing missing_values_mnar     high            87.79257            67.94063 -19.85194 -22.61233
+Bank Marketing missing_values_mnar   medium            72.93399            57.24575 -15.68823 -21.51018
+Bank Marketing      missing_values   medium            75.68763            60.71283 -14.97479 -19.78499
+Bank Marketing      missing_values     high            99.01352            87.17339 -11.84012 -11.95809
+Bank Marketing missing_values_mnar      low            40.11360            34.41234  -5.70126 -14.21278
+  Adult Income      missing_values     high            33.58826            35.56119   1.97293   5.87386
+  Adult Income      missing_values   medium            24.40372            25.98851   1.58479   6.49404
+  Adult Income missing_values_mnar   medium            21.80589            22.78586   0.97997   4.49405
+
+==============================================================================
+2. IS MOVEMENT CONCENTRATED IN THE SUB-0.1s JITTER BAND?
+==============================================================================
+negligible   n= 273  median |delta| 0.000453s  median |rel|    5.6%
+substantial  n=  27  median |delta| 0.450942s  median |rel|   21.5%
+
+cells that CROSSED the 0.1s band boundary: 0
+
+==============================================================================
+3. DID ANY SUBSTANTIAL-COST ACTION CHANGE RANK?
+==============================================================================
+previous: substantial-band actions = ['missing_values', 'missing_values_mnar', 'typographical_errors']
+                      clean_s  total_s         band
+Error_Type                                         
+missing_values        18.5672  18.5770  substantial
+missing_values_mnar   17.7322  17.9423  substantial
+typographical_errors   0.9639   0.9929  substantial
+current: substantial-band actions = ['missing_values', 'missing_values_mnar', 'typographical_errors']
+                      clean_s  total_s         band
+Error_Type                                         
+missing_values        17.0064  17.0162  substantial
+missing_values_mnar   15.0826  15.2926  substantial
+typographical_errors   0.7897   0.8188  substantial
+
+==============================================================================
+4. PRIMARY - BAND-COLLAPSED ROBUSTNESS TO THE COST DEFINITION
+==============================================================================
+The RQ2 claim is between bands, not within the negligible group.
+previous  band-level agreement = 0.800 (16/20 actions in the same band under both cost definitions)   [secondary: raw Spearman = 0.371]
+current   band-level agreement = 0.800 (16/20 actions in the same band under both cost definitions)   [secondary: raw Spearman = 0.251]
+
+==============================================================================
+5. IS THE 0.1s CUTOFF DRIVING THE CONCLUSION?
+==============================================================================
+Band membership re-derived at three thresholds. The conclusion should
+be the one that holds across all of them.
+  threshold 0.05s -> substantial: ['missing_values', 'missing_values_mnar', 'typographical_errors']
+                     band agreement across cost definitions: 0.500 (10/20)
+  threshold 0.10s -> substantial: ['missing_values', 'missing_values_mnar', 'typographical_errors']
+                     band agreement across cost definitions: 0.800 (16/20)
+  threshold 0.20s -> substantial: ['missing_values', 'missing_values_mnar', 'typographical_errors']
+                     band agreement across cost definitions: 0.900 (18/20)
+
+substantial at EVERY threshold : ['missing_values', 'missing_values_mnar', 'typographical_errors']
+bounces between bands          : none
+
+=> Band membership is insensitive to the exact cutoff over 0.05-0.20s.
+
+INTERPRETATION
+If band-level agreement holds while raw Spearman moves, the economic
+conclusion is stable and the movement is within-band jitter. If a
+substantial-cost action changed band or rank, that is a real finding.
+A moved Spearman is a statement about timing stability, NOT evidence
+that the cosmetic Method label mattered.

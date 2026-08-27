@@ -1,0 +1,13 @@
+# SHA-256 checksums of the exact raw dataset files used in the frozen
+# experiment (9-10 August 2026). Computed directly from the files in
+# data_quality_research_v2/data/ before this repository was assembled.
+#
+# fetch_data.py verifies every download against this file and refuses to
+# proceed on a mismatch - see data/README.md.
+
+5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d  adult.data
+d1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d  bank-full.csv
+52fc98c22e7350402a0cbcbb1d5a7f50981ad0236bab440a58918ab32a8a20f2  dataset.arff
+b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871  german.data
+d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a  wdbc.data
+840e04e3f20f8a5b326892f3b9cbc01c4cd6f7e6c597630b701ef6c0ac79f5ef  wdbc.names

@@ -1,0 +1,130 @@
+========================================================================================================
+RQ2 (B) — AUTOMATED EFFICIENCY: benefit per second of cleaning compute
+========================================================================================================
+                     Error_Type                          Method  Damage_pp  Improvement_pp  Clean_Seconds  Train_Delta_Seconds  Marginal_Compute_Seconds  pp_per_second  pp_per_second_marginal   Cost_Band
+              contextual_errors                    IQR clipping     3.5572          2.6351         0.0118              -0.0133                    0.0246       222.3965                107.3295  negligible
+                 invalid_values     sentinel to NaN then impute     2.6235          2.5769         0.0110              -0.0414                    0.0422       234.0481                 61.0866  negligible
+             data_inconsistency               consistency rules     1.2378          1.2147         0.0225              -0.0178                    0.0860        54.0126                 14.1234  negligible
+                   data_leakage drop features with |corr| > 0.5     3.0977          0.9180         0.0020               0.0796                    0.1354       454.6874                  6.7778  negligible
+            duplicates_minority           drop exact duplicates     0.5153          0.5141         0.0117              -0.4130                    0.0134        44.1258                 38.4631  negligible
+             redundant_features        drop correlated features     0.5153          0.3588         0.0031              -0.1029                    0.0500       114.1851                  7.1742  negligible
+              domain_violations                    IQR clipping     0.5725          0.2977         0.0116               0.0037                    0.0355        25.6273                  8.3782  negligible
+imbalanced_feature_distribution              quantile transform     0.6838          0.1775         0.0187               0.2000                    0.2314         9.4805                  0.7672  negligible
+                       outliers                    IQR clipping     0.3777          0.1541         0.0115               0.0096                    0.0860        13.4143                  1.7905  negligible
+              outliers_targeted                    IQR clipping     0.6190          0.0567         0.0114               0.0504                    0.1006         4.9717                  0.5639  negligible
+                     duplicates           drop exact duplicates     0.0540          0.0529         0.0118              -0.4061                    0.0118         4.4786                  4.4786  negligible
+         feature_noise_targeted     rank-order median smoothing     0.3320          0.0131         0.0226              -0.0113                    0.0741         0.5786                  0.1764  negligible
+            duplicates_targeted           drop exact duplicates     0.0130          0.0119         0.0117              -0.3516                    0.0131         1.0149                  0.9045  negligible
+             data_heterogeneity         re-standardise features     2.4133          0.0000         0.0045               0.0494                    0.0650         0.0000                  0.0000  negligible
+             categorical_errors     validate against vocabulary    -0.0678         -0.0040         0.0118               0.0076                    0.0304        -0.3400                 -0.1316  negligible
+                  feature_noise     rank-order median smoothing     0.0815         -0.0067         0.0255               0.0301                    0.0639        -0.2646                 -0.1056  negligible
+            missing_values_mnar                  KNN imputation     6.5429          4.3215        14.5139               0.1710                   14.7239         0.2977                  0.2935 substantial
+                 missing_values                  KNN imputation     0.3641          0.2849        15.5590              -0.1656                   15.5688         0.0183                  0.0183 substantial
+           typographical_errors fuzzy match to known categories    -0.2932         -0.1161         0.7763              -0.0729                    0.8053        -0.1496                 -0.1442 substantial
+
+Best automated action: contextual_errors (IQR clipping)
+  2.64pp for 0.012s = 222.40 pp per second
+
+========================================================================================================
+RQ2 (B) — BREAK-EVEN: how cheap must human correction be to beat automation?
+========================================================================================================
+C* is the compute-equivalent budget human correction must undercut.
+rho = share of injected errors a human actually catches (unknown, left free).
+
+             Error_Type  Ceiling_pp  C*_rho_0.25  C*_rho_0.50  C*_rho_0.75  C*_rho_1.00
+         annotator_bias       7.181        0.008        0.016        0.024        0.032
+       ambiguous_labels       4.938        0.006        0.011        0.017        0.022
+ label_noise_asymmetric       3.590        0.004        0.008        0.012        0.016
+          concept_drift       2.542        0.003        0.006        0.009        0.011
+            label_noise       0.958        0.001        0.002        0.003        0.004
+             data_drift       0.268        0.000        0.001        0.001        0.001
+data_representativeness       0.032        0.000        0.000        0.000        0.000
+      provenance_issues      -0.135       -0.000       -0.000       -0.000       -0.001
+
+========================================================================================================
+ROBUSTNESS — does the ranking survive the alternative cost definition?
+========================================================================================================
+  primary  (cleaning time only)      top 3: ['data_leakage', 'invalid_values', 'contextual_errors']
+  marginal (cleaning + train delta)  top 3: ['contextual_errors', 'invalid_values', 'duplicates_minority']
+  rank correlation between the two: rho = 0.923
+  Secondary diagnostic only: this correlation is computed over all 20
+  actions, most of which sit in the negligible band where ordering is
+  noise. The primary robustness statistic is band-level agreement
+  (see audit_cost_stability.py). Claim: robust to the TWO TESTED
+  definitions of marginal compute cost - not to every costing scheme.
+
+========================================================================================================
+METRIC-MISMATCHED INTERVENTIONS — reported separately, not ranked above
+========================================================================================================
+  class_imbalance
+    accuracy  -3.33pp   recall +18.18pp   F1  +4.54pp   AUC  -0.32pp
+    Excluded from the accuracy-denominated ranking: the intervention
+    optimises a different trade-off, moving the decision threshold
+    rather than degrading the model (AUC is essentially unchanged).
+
+========================================================================================================
+ECONOMIC REGIMES
+========================================================================================================
+
+High-return automated (4):
+  contextual_errors                +2.64pp    222.40 pp/s
+  invalid_values                   +2.58pp    234.05 pp/s
+  data_inconsistency               +1.21pp     54.01 pp/s
+  missing_values_mnar              +4.32pp      0.30 pp/s
+
+Moderate (2):
+  data_leakage                     +0.92pp    454.69 pp/s
+  duplicates_minority              +0.51pp     44.13 pp/s
+
+Low return - cleanable but little damage to recover (13):
+  redundant_features               +0.36pp  damage 0.52pp
+  domain_violations                +0.30pp  damage 0.57pp
+  imbalanced_feature_distribution  +0.18pp  damage 0.68pp
+  outliers                         +0.15pp  damage 0.38pp
+  outliers_targeted                +0.06pp  damage 0.62pp
+  duplicates                       +0.05pp  damage 0.05pp
+  feature_noise_targeted           +0.01pp  damage 0.33pp
+  duplicates_targeted              +0.01pp  damage 0.01pp
+  data_heterogeneity               +0.00pp  damage 2.41pp
+  categorical_errors               +-0.00pp  damage -0.07pp
+  feature_noise                    +-0.01pp  damage 0.08pp
+  missing_values                   +0.28pp  damage 0.36pp
+  typographical_errors             +-0.12pp  damage -0.29pp
+
+========================================================================================================
+RQ2 (A) — ILLUSTRATIVE SINGLE-NUMBER ROI  [sensitivity only]
+========================================================================================================
+Assumes 1 human-minute = 60s compute and
+90 annotation-minutes per 1000 rows.
+These constants are illustrative. No primary conclusion depends on them.
+
+                         Action     Route  Benefit_pp       Cost_s  ROI_pp_per_s
+                   data_leakage automated    0.917959     0.002019    454.687416
+                 invalid_values automated    2.576908     0.011010    234.048078
+              contextual_errors automated    2.635126     0.011849    222.396483
+             redundant_features automated    0.358819     0.003142    114.185127
+             data_inconsistency automated    1.214683     0.022489     54.012569
+            duplicates_minority automated    0.514113     0.011651     44.125765
+              domain_violations automated    0.297680     0.011616     25.627346
+                       outliers automated    0.154052     0.011484     13.414340
+imbalanced_feature_distribution automated    0.177522     0.018725      9.480464
+              outliers_targeted automated    0.056721     0.011409      4.971730
+                     duplicates automated    0.052855     0.011802      4.478587
+            duplicates_targeted automated    0.011854     0.011680      1.014918
+         feature_noise_targeted automated    0.013070     0.022589      0.578595
+            missing_values_mnar automated    4.321494    14.513862      0.297749
+                 missing_values automated    0.284898    15.559010      0.018311
+                 annotator_bias  external    5.385650 27000.000000      0.000199
+               ambiguous_labels  external    3.703597 27000.000000      0.000137
+         label_noise_asymmetric  external    2.692718 27000.000000      0.000100
+                  concept_drift  external    1.906223 27000.000000      0.000071
+                    label_noise  external    0.718434 27000.000000      0.000027
+                     data_drift  external    0.201234 27000.000000      0.000007
+        data_representativeness  external    0.023873 27000.000000      0.000001
+             data_heterogeneity automated    0.000000     0.004472      0.000000
+              provenance_issues  external   -0.101142 27000.000000     -0.000004
+           typographical_errors automated   -0.116144     0.776295     -0.149613
+                  feature_noise automated   -0.006746     0.025496     -0.264587
+             categorical_errors automated   -0.004006     0.011782     -0.340001
+
+Saved: rq2_automated_efficiency.csv, rq2_breakeven.csv

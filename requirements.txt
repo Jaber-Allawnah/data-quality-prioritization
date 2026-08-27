@@ -1,0 +1,16 @@
+# No environment lock file (venv/conda export) was captured at the time the
+# frozen experiment ran (9-10 August 2026), so these versions cannot be
+# verified as byte-identical to that run. They are the versions installed in
+# the environment that has been running this codebase since, on Python 3.12
+# (confirmed by the .cpython-312.pyc tag on the project's compiled modules).
+# Treat this file as "known to work", not "guaranteed identical to the
+# original run" - see README.md, "Reproducing experimental conditions vs
+# re-measuring runtime".
+
+numpy==2.4.3
+pandas==3.0.5
+scipy==1.18.0
+scikit-learn==1.9.0
+xgboost==3.4.0
+lightgbm==4.7.0
+openpyxl>=3.1

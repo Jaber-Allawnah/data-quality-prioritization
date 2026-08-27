@@ -1,0 +1,32 @@
+Breast Cancer done
+German Credit done
+Adult Income done
+Bank Marketing done
+Telco Churn done
+
+============================================================================================
+COMPUTATIONAL COST PER CLEANING ACTION (median seconds)
+============================================================================================
+                     Error_Type                          Method  Clean_Seconds  Train_Seconds  Total_Seconds  Row_Change_Pct
+                 missing_values                  KNN imputation         17.006          3.681         20.687           0.000
+            missing_values_mnar                  KNN imputation         15.083          3.799         18.882           0.000
+                class_imbalance             oversample minority          0.003          6.395          6.398          57.972
+           typographical_errors fuzzy match to known categories          0.790          3.794          4.584           0.000
+              contextual_errors                    IQR clipping          0.012          4.089          4.101           0.000
+              domain_violations                    IQR clipping          0.012          4.079          4.091           0.000
+                  feature_noise     rank-order median smoothing          0.026          4.044          4.070           0.000
+              outliers_targeted                    IQR clipping          0.012          4.016          4.027           0.000
+             redundant_features        drop correlated features          0.003          4.023          4.026           0.000
+                       outliers                    IQR clipping          0.012          3.985          3.997           0.000
+                     duplicates           drop exact duplicates          0.012          3.863          3.875          -9.003
+                 invalid_values     sentinel to NaN then impute          0.011          3.855          3.867           0.000
+             categorical_errors     validate against vocabulary          0.012          3.852          3.864           0.000
+         feature_noise_targeted     rank-order median smoothing          0.024          3.830          3.854           0.000
+             data_heterogeneity         re-standardise features          0.005          3.847          3.852           0.000
+imbalanced_feature_distribution              quantile transform          0.019          3.811          3.830           0.000
+             data_inconsistency               consistency rules          0.024          3.805          3.828           0.000
+            duplicates_minority           drop exact duplicates          0.012          3.813          3.826          -9.003
+                   data_leakage drop features with |corr| > 0.5          0.002          3.816          3.818           0.000
+            duplicates_targeted           drop exact duplicates          0.012          3.777          3.789          -9.003
+
+Saved: results/cleaning_costs.csv

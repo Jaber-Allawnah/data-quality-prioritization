@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Raw datasets - fetched by data/fetch_data.py, not committed
+data/*.data
+data/*.names
+data/*.csv
+data/*.arff
+!data/checksums.txt
+
+# Local build artefacts
+results/datasets_raw.pkl
+
+# OS
+.DS_Store
+Thumbs.db

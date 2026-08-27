@@ -1,0 +1,8 @@
+Comparison,Mechanism_A,Damage_A_pp,Mechanism_B,Damage_B_pp,Difference_pp,p,Significant
+missing_values vs missing_values_mnar,MCAR,0.364113348224679,MNAR (target-related),6.542907738312505,6.178794390087826,9.957723908569869e-12,True
+label_noise vs label_noise_asymmetric,symmetric,0.9579124183397592,one-directional,3.5902905612918747,2.6323781429521156,3.752067182849001e-09,True
+duplicates vs duplicates_targeted,random rows,0.05404114046703185,majority class,0.013041056996563712,-0.04100008347046814,0.7447676648122427,False
+duplicates vs duplicates_minority,random rows,0.05404114046703185,minority class,0.5152994303949072,0.4612582899278754,0.001387489433371745,True
+outliers vs outliers_targeted,all features,0.37765102509981113,top predictors,0.6190089360003358,0.24135791090052466,0.22239804700152074,False
+feature_noise vs feature_noise_targeted,all features,0.08153897813447883,top predictors,0.3319653460466726,0.25042636791219375,0.11555997225813883,False
+typographical_errors vs categorical_errors,invalid value (typo),-0.2932288059519089,valid but wrong category,-0.0678295436986225,0.22539926225328644,0.1942974114639278,False
