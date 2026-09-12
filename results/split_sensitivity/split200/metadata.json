@@ -1,0 +1,38 @@
+{
+  "split_seed": 200,
+  "injector_seed": 42,
+  "cleaner_seed": 42,
+  "tester_seed": 42,
+  "severities": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "included_error_types": [
+    "ambiguous_labels",
+    "annotator_bias",
+    "categorical_errors",
+    "concept_drift",
+    "contextual_errors",
+    "data_heterogeneity",
+    "data_inconsistency",
+    "data_leakage",
+    "duplicates",
+    "duplicates_minority",
+    "duplicates_targeted",
+    "feature_noise",
+    "feature_noise_targeted",
+    "invalid_values",
+    "label_noise",
+    "label_noise_asymmetric",
+    "missing_values",
+    "missing_values_mnar",
+    "outliers",
+    "outliers_targeted",
+    "typographical_errors"
+  ],
+  "n_error_types": 21,
+  "dry_run": false,
+  "timestamp": "2026-09-10T22:21:57.045463",
+  "script": "run_split_sensitivity.py"
+}

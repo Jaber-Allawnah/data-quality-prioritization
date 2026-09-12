@@ -1,0 +1,55 @@
+﻿Error types in scope: 21
+==============================================================================
+SPLIT SEED 100
+==============================================================================
+  baseline: Breast Cancer... 8/8 models
+  baseline: German Credit... 8/8 models
+  baseline: Adult Income... 8/8 models
+  baseline: Bank Marketing... 8/8 models
+  baseline: Telco Churn... 8/8 models
+  saved: results/split_sensitivity/split100\baseline_results.csv (40 rows)
+
+  Breast Cancer
+  [63/315]
+  German Credit
+  [126/315]
+  Adult Income
+  [189/315]
+  Bank Marketing
+  [252/315]
+  Telco Churn
+  [315/315]
+
+Saved 4440 rows -> results/split_sensitivity/split100\experiment_results.csv
+  0 failures, 75 cleaning skipped
+
+  saved: results/split_sensitivity/split100\metadata.json
+split 100 done in 63.5 min
+
+==============================================================================
+SPLIT SEED 200
+==============================================================================
+  baseline: Breast Cancer... 8/8 models
+  baseline: German Credit... 8/8 models
+  baseline: Adult Income... 8/8 models
+  baseline: Bank Marketing... 8/8 models
+  baseline: Telco Churn... 8/8 models
+  saved: results/split_sensitivity/split200\baseline_results.csv (40 rows)
+
+  Breast Cancer
+  [63/315]
+  German Credit
+  [126/315]
+  Adult Income
+  [189/315]
+  Bank Marketing
+  [252/315]
+  Telco Churn
+  [315/315]
+
+Saved 4440 rows -> results/split_sensitivity/split200\experiment_results.csv
+  0 failures, 75 cleaning skipped
+
+  saved: results/split_sensitivity/split200\metadata.json
+split 200 done in 56.1 min
+

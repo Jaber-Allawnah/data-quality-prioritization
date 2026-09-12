@@ -20,8 +20,10 @@ and `docs/RESEARCH_LOG.md` for what was excluded and why.
 ```
 src/           Core pipeline: data loading, error injection, cleaning, models, degradation testing
 scripts/       Orchestration scripts - run the pipeline, analyse results, audit correctness
+  split_sensitivity/  Secondary analysis: re-run a scoped subset on two alternative train/test partitions
 data/          Not committed - fetch_data.py downloads and hash-verifies the 5 source datasets
 results/       Authoritative output CSVs the paper's tables are drawn from
+  split_sensitivity/  Baseline/experiment CSVs and metadata for the two alternative partitions
 frozen/        Verification evidence (checksums, audits, timing-stability runs) - see frozen/README.md
 docs/          METHODOLOGY.md, RESULTS_SUMMARY.md, FROZEN.md, RESEARCH_LOG.md
 ```
@@ -104,6 +106,40 @@ fixed") - not part of a from-scratch run. `scripts/make_excel_summary.py`
 generates a supplementary Excel workbook from `results/*.csv` and is
 optional.
 
+## Split-sensitivity analysis
+
+The main pipeline above uses one fixed train/test partition (`random_state=42`)
+across all three repeated-experiment seeds. `scripts/split_sensitivity/` tests
+whether the headline conclusions depend on that specific partition, by holding
+the injector/cleaner/tester seed fixed at 42 and varying only the partition
+(`DataLoader(random_state=100)` and `DataLoader(random_state=200)`). This
+isolates the effect of the partition choice from the other random components
+of the experimental protocol, since the deterministic per-cell injection seed
+depends on data shape, not row identity, and shape is invariant across any
+80/20 split of the same dataset. It covers a scoped subset of 21 of
+the 28 error types - the union of the highest-damage types and the types
+needed for the seven mechanism-comparison pairs - not a full rerun. See
+`paper` Section 5.11 for the design and Section 6.7 and the Threats section
+for what held and what didn't across partitions.
+
+Run from the repository root, after the main pipeline's `data/` step:
+
+1. `python scripts/split_sensitivity/generate_split_datasets.py` - builds
+   `results/split100/datasets_raw.pkl` and `results/split200/datasets_raw.pkl`
+2. `python scripts/split_sensitivity/validate_split_datasets.py` - pre-run
+   sanity check (partition sizes, class balance, genuine row-content difference)
+3. `python scripts/split_sensitivity/run_split_sensitivity.py` - baselines +
+   experiments for the scoped 21 error types on both partitions ->
+   `results/split_sensitivity/split{100,200}/{baseline_results.csv,
+   experiment_results.csv, metadata.json}`
+4. `python scripts/split_sensitivity/analyze_split_sensitivity.py` - per-split
+   Damage/Improvement, RQ1 headline-action table, and Holm-corrected mechanism
+   contrasts
+
+`results/split_sensitivity/run_log.txt` is the console output of the actual
+run that produced the committed CSVs (row counts, timing, 0 failures on
+both partitions).
+
 ## Claims-to-evidence map
 
 | Claim in the paper | Evidence |
@@ -119,6 +155,7 @@ optional.
 | Injector correctness (0 inert, 0 broken) | `results/injector_audit.csv` |
 | Pipeline/preprocessing correctness | `results/pipeline_overlap_audit.csv` |
 | Every quantitative claim in `docs/` | `verify_documents.py` (checked programmatically against `results/*.csv`) |
+| Split-sensitivity analysis (paper Sections 5.11, 6.7, Threats) | `results/split_sensitivity/split100/`, `results/split_sensitivity/split200/`, `results/split_sensitivity/run_log.txt` |
 
 ## License
 
