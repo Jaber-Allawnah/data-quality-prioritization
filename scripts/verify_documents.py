@@ -11,12 +11,15 @@ Add a check here whenever a new number is asserted in a document. A number that
 appears in the prose but not in this file is unverified by definition.
 """
 import io
+import os
 import re
 import sys
 
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src'))
 
 TOL = 0.011          # accept differences from rounding to 2dp
 failures = []
@@ -44,7 +47,7 @@ def main():
     mech = pd.read_csv('results/mechanism_comparison.csv')
     exp = pd.read_csv('results/experiment_results.csv')
     costs = pd.read_csv('results/cleaning_costs.csv')
-    rs = doc('RESULTS_SUMMARY.md')
+    rs = doc('docs/RESULTS_SUMMARY.md')
 
     print('=' * 78)
     print('1. MEASUREMENT COUNTS')
@@ -106,7 +109,7 @@ def main():
     for _, m in mech.iterrows():
         tag = m.Comparison.split(' vs ')[1]
         check(f'{tag} damage', round(m.Damage_B_pp, 2), m.Damage_B_pp)
-        check(f'{tag} difference', round(m.Difference_pp, 2), m.Difference_pp)
+        check(f'{tag} difference', round(m.mean_diff_pp, 2), m.mean_diff_pp)
     ratio = ov['missing_values_mnar'] / ov['missing_values']
     check('MNAR/MCAR ratio (claimed 18x)', 18, ratio, 0.5)
 
@@ -269,12 +272,12 @@ def main():
     print('=' * 78)
     print('7b. METHODOLOGY DATASET TABLE vs LOADED DATA')
     print('=' * 78)
-    md = doc('METHODOLOGY.md')
+    md = doc('docs/METHODOLOGY.md')
     # | Name | Domain | rows | features | categorical | numeric | share% |
     dsrows = re.findall(r'^\| ([A-Za-z ]+?) \| \w+ \| ([\d,]+) \| (\d+) \| '
                         r'(\d+) \| (\d+) \| ([\d.]+)% \|', md, re.M)
     assert len(dsrows) == 5, f'expected 5 dataset rows, parsed {len(dsrows)}'
-    from src.data_loader import DataLoader
+    from data_loader import DataLoader
     loaded = DataLoader().load_all()   # keyed by snake_case dataset id
     alias = {'Breast Cancer Wisconsin': 'breast_cancer', 'German Credit': 'german_credit',
              'Adult Income': 'adult_income', 'Bank Marketing': 'bank_marketing',
@@ -333,7 +336,7 @@ def main():
     print('8. CROSS-DOCUMENT CONSISTENCY')
     print('=' * 78)
     # A figure asserted in more than one document must be identical in all.
-    others = {n: doc(n) for n in ('METHODOLOGY.md', 'RESEARCH_LOG.md', 'FROZEN.md')}
+    others = {n: doc(f'docs/{n}') for n in ('METHODOLOGY.md', 'RESEARCH_LOG.md', 'FROZEN.md')}
     shared = ['5,760', '3,360', '2,400', '420', '28 error types']
     for tok in shared:
         present = [n for n, t in others.items() if tok in t] + (

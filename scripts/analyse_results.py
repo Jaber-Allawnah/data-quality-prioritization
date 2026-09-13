@@ -136,40 +136,19 @@ def rq1(df):
 
 
 # --------------------------------------------------------------- mechanism
+#
+# NOTE: the mechanism comparison is no longer computed here. This function
+# used an unpaired ttest_ind on rows that were never matched by dataset,
+# model, severity, or random state, and only read the single seed-42 file
+# (N<=120), while the paper's methodology describes a paired design over
+# all three random states (N=360). See statistical_tests.py, which computes
+# the paired t-test, Wilcoxon signed-rank test, Holm-Bonferroni correction,
+# Cohen's d_z, and the dataset/model cluster-bootstrap sensitivity checks
+# correctly, and is the authoritative source for results/mechanism_comparison.csv.
 
 def mechanism(df):
-    print()
-    print('=' * 108)
-    print('MECHANISM — same error, same rate, different placement')
-    print('=' * 108)
-
-    pairs = [('missing_values', 'missing_values_mnar', 'MCAR', 'MNAR (target-related)'),
-             ('label_noise', 'label_noise_asymmetric', 'symmetric', 'one-directional'),
-             ('duplicates', 'duplicates_targeted', 'random rows', 'majority class'),
-             ('duplicates', 'duplicates_minority', 'random rows', 'minority class'),
-             ('outliers', 'outliers_targeted', 'all features', 'top predictors'),
-             ('feature_noise', 'feature_noise_targeted', 'all features', 'top predictors'),
-             ('typographical_errors', 'categorical_errors', 'invalid value (typo)',
-              'valid but wrong category')]
-
-    rows = []
-    for a, b, la, lb in pairs:
-        ga, gb = df[df.Error_Type == a], df[df.Error_Type == b]
-        if not len(ga) or not len(gb):
-            continue
-        _, p = stats.ttest_ind(gb.Damage_pp, ga.Damage_pp)
-        rows.append({
-            'Comparison': f'{a} vs {b}',
-            'Mechanism_A': la, 'Damage_A_pp': ga.Damage_pp.mean(),
-            'Mechanism_B': lb, 'Damage_B_pp': gb.Damage_pp.mean(),
-            'Difference_pp': gb.Damage_pp.mean() - ga.Damage_pp.mean(),
-            'p': p, 'Significant': p < 0.05,
-        })
-
-    out = pd.DataFrame(rows)
-    print(out.round(4).to_string(index=False))
-    out.to_csv('results/mechanism_comparison.csv', index=False)
-    return out
+    from statistical_tests import load_all_seeds, mechanism as _mechanism
+    return _mechanism(load_all_seeds())
 
 
 # -------------------------------------------------------------- RQ3 / RQ4

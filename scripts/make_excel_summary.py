@@ -456,11 +456,12 @@ def main():
                    'the practical contribution of the study.')
 
         # ------------------------------------------------------- 5. mechanism
-        mech2 = mech.rename(columns={
+        mech2 = mech[['Comparison', 'Mechanism_A', 'Damage_A_pp', 'Mechanism_B',
+                      'Damage_B_pp', 'mean_diff_pp', 't_p', 'significant_holm']].rename(columns={
             'Comparison': 'What we compared', 'Mechanism_A': 'Version A',
             'Damage_A_pp': 'Damage A', 'Mechanism_B': 'Version B',
-            'Damage_B_pp': 'Damage B', 'Difference_pp': 'Difference',
-            'p': 'p-value', 'Significant': 'Real difference?'})
+            'Damage_B_pp': 'Damage B', 'mean_diff_pp': 'Difference',
+            't_p': 'p-value', 'significant_holm': 'Real difference? (Holm)'})
         sheet(xl, 'Key Finding - Mechanism', mech2, [24, 22, 11, 24, 11, 12, 12, 16],
               title='Our strongest finding: WHERE the damage lands matters more '
                     'than HOW MUCH there is',

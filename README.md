@@ -28,6 +28,12 @@ frozen/        Verification evidence (checksums, audits, timing-stability runs) 
 docs/          METHODOLOGY.md, RESULTS_SUMMARY.md, FROZEN.md, RESEARCH_LOG.md
 ```
 
+The repository includes the underlying results for all three experimental
+seeds (`42`, `7`, and `123`), allowing the repeated-experiment and
+statistical analyses reported in the paper to be reproduced: `results/`
+holds `baseline_results.csv`/`experiment_results.csv` (seed `42`) alongside
+their `_seed7`/`_seed123` counterparts.
+
 The public repository reorganises experiment entry-point scripts under
 `scripts/`. In the original working directory they sat next to `src/` and
 resolved it as a sibling (`sys.path.insert(0, .../src)`); moving them
@@ -104,7 +110,69 @@ are one-off historical patch scripts used during the winsorisation and
 cost-label fixes documented in `docs/RESEARCH_LOG.md` ("Bugs found and
 fixed") - not part of a from-scratch run. `scripts/make_excel_summary.py`
 generates a supplementary Excel workbook from `results/*.csv` and is
-optional.
+optional. `scripts/verify_documents.py` validates quantitative claims
+against the authoritative results and documentation files.
+
+## Repeated experiments and statistical analysis
+
+Steps 4-5 above (`run_baselines.py`, `run_experiments.py`) were additionally
+repeated under two further random states, `7` and `123`, reusing the same
+train/test partition (`random_state=42`) but varying injection and, where
+applicable, model-training randomness -> `results/baseline_results_seed{7,123}.csv`
+and `results/experiment_results_seed{7,123}.csv`. This gives the pairing key
+dataset x model x severity x random state (5x8x3x3 = 360 matched cells) that
+the paper's RQ1 headline result and seven mechanism comparisons are tested
+over.
+
+`scripts/statistical_tests.py` computes this paired analysis: a paired
+t-test as the primary significance test, a Wilcoxon signed-rank test as a
+nonparametric robustness check, a 95% confidence interval and Cohen's
+d_z for each comparison, Holm-Bonferroni correction across the seven
+mechanism comparisons, and two separate cluster-level bootstrap
+sensitivity analyses (resampling the five datasets as blocks, and
+separately the eight models as blocks) to check whether conclusions are
+sensitive to the repeated datasets/models within the 360 matched cells.
+Run from the repository root, after steps 1-5 have produced all three
+seeds' baseline/experiment files:
+
+```bash
+python scripts/statistical_tests.py
+```
+
+This overwrites `results/mechanism_comparison.csv` (superseding the
+independent-samples computation in `analyse_results.py`'s now-deprecated
+`mechanism()` function, which this script replaces) and writes
+`results/rq1_headline_statistics.csv`.
+
+## Severity-sensitivity analysis
+
+Severity is defined per error type (Section 5.9 of the paper) rather than
+as a single magnitude shared across all 28 types, so two sensitivity
+checks test whether this calibration choice affects the study's
+conclusions.
+
+`scripts/severity_sensitivity_check.py` perturbs the severity schedule of
+the five headline RQ1 remediation actions to a lower (x0.7) and
+higher (x1.5) native-unit schedule, across all three random states
+-> `results/severity_sensitivity_seed{42,7,123}.csv`. This tests whether
+each action's recovery conclusion depends on the specific severity values
+chosen.
+
+`scripts/severity_sensitivity_damage.py` extends this to the damage
+ranking itself, over a scoped subset of 21 of the 28 error types (the
+11 highest-damage types plus the 10 additional types needed for the seven
+mechanism comparisons), at random state `42` only (a three-seed run of
+this scope was estimated at ~17 hours from observed per-cell timing, so
+this check trades cross-seed coverage for feasibility, disclosed as such
+in the paper) -> `results/severity_sensitivity_damage.csv`.
+`scripts/analyze_severity_sensitivity_damage.py` compares the resulting
+damage ranking against the original schedule's ranking. Run from the
+repository root, after `data/` is populated:
+
+```bash
+python scripts/severity_sensitivity_damage.py
+python scripts/analyze_severity_sensitivity_damage.py
+```
 
 ## Split-sensitivity analysis
 
@@ -151,10 +219,13 @@ both partitions).
 | RQ2 - two-run cost-band stability | `frozen/cleaning_costs_PREVIOUS_RUN.csv` (previous) + `results/cleaning_costs.csv` (current) + `frozen/audit_cost_stability_output.txt` |
 | RQ3 - model dependency | `results/rq3_model_dependency.csv` |
 | RQ4 - dataset dependency | `results/rq4_dataset_dependency.csv` |
-| Mechanism comparisons | `results/mechanism_comparison.csv` |
+| RQ1 headline paired statistics (t-test, Wilcoxon, Cohen's d_z, cluster bootstraps) | `results/rq1_headline_statistics.csv`, `scripts/statistical_tests.py` |
+| Mechanism comparisons (paired t-test, Holm-Bonferroni, cluster bootstraps) | `results/mechanism_comparison.csv`, `scripts/statistical_tests.py` |
+| Severity-sensitivity of the five RQ1 headline actions | `results/severity_sensitivity_seed{42,7,123}.csv`, `scripts/severity_sensitivity_check.py` |
+| Severity-sensitivity of the damage ranking (21-type subset) | `results/severity_sensitivity_damage.csv`, `scripts/severity_sensitivity_damage.py`, `scripts/analyze_severity_sensitivity_damage.py` |
 | Injector correctness (0 inert, 0 broken) | `results/injector_audit.csv` |
 | Pipeline/preprocessing correctness | `results/pipeline_overlap_audit.csv` |
-| Every quantitative claim in `docs/` | `verify_documents.py` (checked programmatically against `results/*.csv`) |
+| Every quantitative claim in `docs/` | `scripts/verify_documents.py` (checked programmatically against `results/*.csv`) |
 | Split-sensitivity analysis (paper Sections 5.11, 6.7, Threats) | `results/split_sensitivity/split100/`, `results/split_sensitivity/split200/`, `results/split_sensitivity/run_log.txt` |
 
 ## License
